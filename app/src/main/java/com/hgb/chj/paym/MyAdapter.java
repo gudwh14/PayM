@@ -7,14 +7,14 @@ import android.support.v4.app.FragmentPagerAdapter;
 import java.util.ArrayList;
 
 public class MyAdapter extends FragmentPagerAdapter {
-    private ArrayList<Fragment> mData;
+    private ArrayList<Fragment> mData = new ArrayList<Fragment>();
     public MyAdapter(FragmentManager fm) {
         super(fm);
 
-        mData = new ArrayList<>();
+        /*mData = new ArrayList<>();
         mData.add(new OptionFragment());
         mData.add(new PayFragment());
-        mData.add(new InputFragment());
+        mData.add(new InputFragment()); */
     }
 
     @Override
@@ -26,4 +26,8 @@ public class MyAdapter extends FragmentPagerAdapter {
     public int getCount() {
         return mData.size();
     }
+    public void addItem(Fragment fragment) {
+        mData.add(fragment);
+    }
+
 }
